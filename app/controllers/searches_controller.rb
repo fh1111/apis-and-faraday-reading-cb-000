@@ -9,7 +9,7 @@ class SearchesController < ApplicationController
         req.params['client_secret'] = 'XD1QKIZ3RBH20CE5GSUIOJUBQHCFDYSRGCZ4X5PC5QL1XSPU'
         req.params['v'] = '20160201'
         req.params['near'] = params[:zipcode]
-        req.params['query'] = 'coffee shop'
+        req.params['query'] = 'bar'
       end
 
       body_hash = JSON.parse(@resp.body)
