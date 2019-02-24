@@ -11,12 +11,9 @@ class SearchesController < ApplicationController
         req.params['near'] = params[:zipcode]
         req.params['query'] = 'coffee shop'
       end
+
       body_hash = JSON.parse(@resp.body)
-      if @resp.success?
-        @venues = body_hash["response"]["venues"]
-      else
-        @error = body_hash["meta"]["errorDetail"]
-      end
+      @venues = body_hash["response"]["venues"]
 
     rescue Faraday::ConnectionFailed
       @error = "There was a timeout. Please try again."
